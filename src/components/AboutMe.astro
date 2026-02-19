@@ -1,0 +1,150 @@
+---
+import surgeonPhoto from "../assets/surgeon-photo.webp";
+---
+
+<div id="about-me">
+  <div class="about-me-container">
+    <div class="about-me-content">
+      <h2>Experiencia a tu servicio</h2>
+      <p>
+        Soy el Dr. Roberto Eliseo Estrada de la Fuente, médico cirujano egresado de la
+        Universidad de Guadalajara, con especialidad en <b>Ginecología y Obstetricia</b> realizada en el hospital Dr. Valentín
+        Gómez Farías del ISSSTE en Zapopan, Jalisco.
+      </p>
+      <p>
+        Actualmente laboro como médico de base en el Hospital General de Zona No.
+        09 del IMSS en Ciudad Guzmán, Jalisco. Cuento con <b>más de 20 años de experiencia</b> en la atención médica privada en las localidades de Tapalpa, San Gabriel y Ciudad Guzmán.
+      </p>
+      <p>
+        Combinando mi experiencia en el sector público y privado para ofrecerte
+        diagnósticos precisos y un excelente trato humano.
+      </p>
+    </div>
+
+    <div class="certifications-container">
+      <h3>Certificaciones y Membresías</h3>
+      <ul>
+        <li>Miembro de la Sociedad Mexicana de Ginecología y Obstetricia</li>
+        <li>
+          Miembro del Colegio de Ginecología y Obstetricia del sur de Jalisco
+        </li>
+        <li>
+          Adiestramiento en Patología del Tracto Genital Inferior en el Hospital
+          General de Zona 89 del IMSS
+        </li>
+      </ul>
+    </div>
+
+    <div class="about-me-image">
+      <img
+        src={surgeonPhoto.src}
+        alt="Foto del Dr. Roberto Estrada"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  #about-me {
+    background: var(--bg-light);
+    padding: clamp(3rem, 6vw, 6rem) 0;
+  }
+
+  .about-me-container {
+    /* max-width: 1200px; */
+    width: clamp(300px, 80vw, 1440px);
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    /* Mapa actualizado: 2 filas a la izquierda, 1 gran columna a la derecha */
+    grid-template-areas:
+      "content image"
+      "certifications image";
+  }
+
+  .about-me-content {
+    grid-area: content;
+  }
+  .certifications-container {
+    grid-area: certifications;
+  }
+  .about-me-image {
+    grid-area: image;
+    display: flex;
+    align-items: center;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+  }
+
+  .certifications-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .certifications-container li {
+    margin-bottom: 0.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1rem;
+  }
+
+  .certifications-container li::before {
+    content: "✓";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .about-me-image img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 2rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* --- Responsive Design --- */
+  @media (max-width: 1024px) {
+    .about-me-container {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "image"
+        "content"
+        "certifications";
+      text-align: center;
+      gap: 2.5rem;
+    }
+
+    .about-me-image {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .certifications-container li {
+      padding-left: 0;
+    }
+
+    .certifications-container li::before {
+      display: none;
+    }
+  }
+</style>

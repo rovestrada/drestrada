@@ -1,0 +1,113 @@
+---
+// Definimos la interfaz para tener autocompletado y validación
+interface Props {
+  title: string;
+  services: string[];
+  icon?: any;
+}
+
+// Extraemos las propiedades de Astro.props con un valor por defecto para el icono
+const { title, services, icon: Icon = "🩺" } = Astro.props;
+
+// Comprobamos si el icono es un componente o un simple texto/emoji
+const isComponent = typeof Icon !== "string";
+---
+
+<div class="card">
+  <div class="card-header">
+    <span class="card-icon">
+      {isComponent ? <Icon /> : Icon}
+    </span>
+    <h3 class="card-title">{title}</h3>
+  </div>
+
+  <div class="card-body">
+    <ul class="service-list">
+      {
+        services.map((service) => (
+          <li class="service-item">
+            {service}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+      box-shadow 0.3s ease;
+    height: 100%;
+    width: 100%;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    /* Sombra un poco más fuerte al levantar */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.85); /* Se vuelve más opaco al hover */
+  }
+
+  .card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    background: #ebf8ff;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+  }
+
+  .card-icon :global(svg) {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--primary-color);
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+  }
+
+  .service-list {
+    max-width: 90%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .service-item::before {
+    content: "✓";
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+</style>

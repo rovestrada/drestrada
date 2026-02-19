@@ -1,22 +1,143 @@
+---
+import "@fontsource-variable/inter";
+import "@fontsource/playfair-display";
+
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Services from "../components/Services.astro";
+import Organizations from "../components/Organizations.astro";
+import Location from "../components/Location.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Dr. Roberto Estrada - Ginecólogo y Obstetra en Ciudad Guzmán, Jalisco. Más de 20 años de experiencia. Agenda tu cita." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://drestradadelafuente.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dr. Roberto Estrada - Ginecología y Obstetricia" />
+    <meta property="og:description" content="Ginecólogo y Obstetra en Ciudad Guzmán, Jalisco. Atención de calidad respaldada por más de 20 años de trayectoria." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://drestradadelafuente.com/" />
+    <meta property="og:image" content="https://drestradadelafuente.com/og-image.webp" />
+    <meta property="og:locale" content="es_MX" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "name": "Dr. Roberto Estrada de la Fuente",
+        "description": "Ginecólogo y Obstetra con más de 20 años de experiencia en Ciudad Guzmán, Jalisco.",
+        "medicalSpecialty": "Gynecology and Obstetrics",
+        "telephone": "+52-341-413-8935",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ciudad Guzmán",
+          "addressRegion": "Jalisco",
+          "addressCountry": "MX"
+        },
+        "url": "https://drestradadelafuente.com/"
+      }
+    </script>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <Hero />
+      <AboutMe />
+      <Services />
+      <Organizations />
+      <Location />
+    </main>
+    <Footer />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  :root {
+    /* Font System */
+    --font-family-base: "Inter Variable", -apple-system, sans-serif;
+    --font-family-heading: "Inter Variable", -apple-system, sans-serif;
+
+    /* Font Weights */
+    --fw-light: 300;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* Colors */
+    --primary-color: #32073e;
+    --accent-color: #ff81ca;
+    --accent-light: #ffa6da;
+    --accent-dark: #2c5282;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+    --bg-light: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    width: 100%;
+    font-size: clamp(100%, 0.8vw + 0.8rem, 120%);
+    font-family: var(--font-family-base);
+    background: var(--bg-light);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-family-heading);
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+    color: var(--primary-color);
+  }
+  h1 {
+    font-size: clamp(4rem, 9vw, 7rem);
+  }
+  h2 {
+    font-size: clamp(2.75rem, 8.5vw, 4.5rem);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  main {
+    flex: 1;
+  }
 </style>

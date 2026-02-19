@@ -1,0 +1,144 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Dr. Roberto Estrada</h3>
+        <p>Atención de calidad y calidez respaldada por más de 20 años de trayectoria.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Enlaces rápidos</h4>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#about-me">Sobre Mí</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#location">Ubicación</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>📞 341 413 8935</p>
+        <p>🚨 Urgencias: 341 107 8535</p>
+        <p>📍 Ciudad Guzmán, Jalisco.</p>
+      </div>
+    </div>
+
+    <div class="footer-cofepris">
+      <p>Permiso de publicidad COFEPRIS: XXXXXXXX</p>
+      <!-- <p>Cédula Profesional: XXXXXXXX</p> -->
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Dr. Roberto Estrada. Todos los derechos reservados.</p>
+      <!-- <a href="/privacidad">Aviso de Privacidad</a> -->
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--primary-color, #32073e);
+    color: #e0e0e0;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-brand h3 {
+    color: #e6e6ef;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .footer-brand p {
+    line-height: 1.6;
+    max-width: 300px;
+  }
+
+  .footer-links h4, .footer-contact h4 {
+    color: #e6e6ef;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-links a {
+    color: #b0b3c1;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-color, #5e63ff);
+  }
+
+  .footer-contact p {
+    margin-bottom: 0.8rem;
+    color: #b0b3c1;
+  }
+
+  .footer-cofepris {
+    border-top: 1px solid #333;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .footer-cofepris p {
+    margin-bottom: 0.3rem;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .footer-bottom a {
+    color: #888;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: 1rem;
+      text-align: center;
+    }
+  }
+</style>

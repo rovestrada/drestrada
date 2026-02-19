@@ -1,0 +1,81 @@
+---
+import LocationCard from "./LocationCard.astro";
+---
+
+<section id="location">
+  <div class="container">
+    <div class="section-header">
+      <h2>Encuéntranos</h2>
+      <p>Estamos cerca de ti con dos ubicaciones para tu comodidad.</p>
+    </div>
+    <div class="locations-grid">
+      <!-- Consultorio 1: Ciudad Guzmán -->
+      <LocationCard
+        city="Ciudad Guzmán, Jalisco"
+        address="Calle Arcángeles 22, Col. Centro, 49000 Ciudad Guzmán, Jal."
+        phone="341 107 8535"
+        schedule="Lunes a Viernes: 10:00 - 14:00 y 16:00 - 20:00"
+        mapSrc="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3756.0718674426216!2d-103.4775732!3d19.7095642!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f87b2af22f345%3A0x26bdfbab2a5ef666!2sMultim%C3%A9dica%20Arc%C3%A1ngeles!5e0!3m2!1ses!2smx!4v1768859513773!5m2!1ses!2smx"
+        email="Cita Previa"
+      />
+
+      <!-- Consultorio 2: San Gabriel -->
+      <LocationCard
+        city="San Gabriel, Jalisco"
+        address="Mariano Moret 13, Barrio de La Quinta, 49700 San Gabriel, Jal."
+        phone="341 107 8535"
+        schedule="Sábados: 9:00 - 14:00 y Domingos: 10:00 - 13:00"
+        mapSrc="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.148862340359!2d-103.76715659999999!3d19.748829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842577003abe0443%3A0x8f495a04f382a044!2sDr%20Roberto%20El%C3%ADseo%20Estrada%20de%20la%20Fuente%2C%20Ginec%C3%B3logo!5e0!3m2!1ses!2smx!4v1768859608607!5m2!1ses!2smx"
+        email="Cita Previa"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  #location {
+    padding: clamp(2rem, 4vw, 4rem) 0;
+  }
+
+  .container {
+    width: clamp(300px, 80vw, 1440px);
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  p {
+    color: var(--text-light);
+    font-size: 1.125rem;
+  }
+
+  .locations-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+    gap: 2.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    .container {
+      width: clamp(300px, 62.5vw, 640px);
+    }
+
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,95 @@
+---
+import udgLogo from "../assets/udg-logo.webp";
+import isssteLogo from "../assets/issste-logo.webp";
+import colegioLogo from "../assets/colegio-logo.webp";
+import colegioSurLogo from "../assets/colegio-sur-logo.webp";
+---
+
+<div id="organizations">
+  <div class="organizations-container">
+    <div class="organizations-header">
+      <h3>Avalado por Instituciones de Prestigio</h3>
+    </div>
+    <div class="organizations-content">
+      <div class="organization-logo">
+        <img
+          src={udgLogo.src}
+          alt="Universidad de Guadalajara Logo"
+        />
+      </div>
+      <div class="organization-logo">
+        <img src={isssteLogo.src} alt="ISSSTE Logo" />
+      </div>
+      <div class="organization-logo">
+        <img
+          src={colegioLogo.src}
+          alt="Federación Mexicana de Colegios de Obstetricia y Ginecología, A.C. Logo"
+        />
+      </div>
+      <div class="organization-logo">
+        <img
+          src={colegioSurLogo.src}
+          alt="Colegio de Ginecología y Obstetricia del Sur de Jalisco, A. C. Logo"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #organizations {
+    background: none;
+    padding: clamp(3rem, 4vw, 4rem) 0;
+  }
+
+  .organizations-container {
+    width: clamp(300px, 80vw, 1440px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .organizations-header h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    color: var(--text-light);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  .organizations-content {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  .organization-logo {
+    flex: 0 1 auto;
+    width: 200px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .organization-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .organization-logo img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

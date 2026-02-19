@@ -1,0 +1,176 @@
+---
+import Gynecology from "./icons/Gynecology.astro";
+import Obstetrics from "./icons/Obstetrics.astro";
+import Surgery from "./icons/Surgery.astro";
+import ColposcopyIcon from "./icons/ColposcopyIcon.astro";
+import ReproductiveHealthIcon from "./icons/ReproductiveHealthIcon.astro";
+import MedicalTeamIcon from "./icons/MedicalTeamIcon.astro";
+import Card from "../components/Card.astro";
+---
+
+<div id="services">
+  <div class="services-container">
+    <div class="services-heading">
+      <h2>Nuestros Servicios</h2>
+      <p>
+        Ofrecemos una amplia gama de servicios médicos para cuidar de ti y tu
+        familia.
+      </p>
+    </div>
+    <div class="services-grid">
+      <Card
+        title="Ginecología"
+        icon={Gynecology}
+        services={[
+          "Control de trastornos menstruales",
+          "Manejo de infecciones ginecológicas",
+          "Tratamiento de endometriosis",
+          "Exámenes pélvicos y mamarios",
+        ]}
+      />
+      <Card
+        title="Obstetricia"
+        icon={Obstetrics}
+        services={[
+          "Control de embarazo normal y de alto riesgo",
+          "Ultrasonido 2D, 3D, 4D y 5D",
+          "Atención de parto y cesárea",
+        ]}
+      />
+      <Card
+        title="Salud Reproductiva"
+        icon={ReproductiveHealthIcon}
+        services={[
+          "Asesoramiento en fertilidad",
+          "Estudio y manejo de la pareja con problemas de fertilidad",
+          "Asesoramiento en anticoncepción",
+          "Educación sobre salud sexual",
+        ]}
+      />
+      <Card
+        title="Clínica de Displasias"
+        icon={ColposcopyIcon}
+        services={[
+          "Colposcopía y papanicolau",
+          "Toma de biopsia cervical dirigida",
+          "Electrocirugía de lesiones cervicales",
+          "Estudio y manejo de la pareja con virus de papiloma humano",
+        ]}
+      />
+      <Card
+        title="Cirugía Ginecológica"
+        icon={Surgery}
+        services={[
+          "Histerectomía",
+          "Miomectomía",
+          "Cirugía para prolapso de órganos pélvicos",
+          "Cirugía de mama",
+          "OTB (Salpingoclasia)",
+          "Legrados ginecológicos",
+        ]}
+      />
+
+      <Card
+        title="Equipo Médico Multidisciplinario"
+        icon={MedicalTeamIcon}
+        services={[
+          "Medicina Materno Fetal",
+          "Uroginecologia",
+          "Endocrinologia",
+          "Medicina Interna",
+          "Oncologia",
+        ]}
+      />
+    </div>
+    <div class="cta-container">
+      <a
+        class="cta-button"
+        href={`https://wa.me/523411078535?text=Hola%20Dr.%20Estrada,%20quisiera%20agendar%20cita`}
+        target="_blank"
+        rel="noopener noreferrer"
+        >Agendar Cita Aquí</a
+      >
+    </div>
+  </div>
+</div>
+
+<style>
+  #services {
+    padding: clamp(3rem, 6vw, 6rem) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    width: clamp(300px, 80vw, 1440px);
+    margin: 0 auto;
+  }
+
+  .services-heading {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: var(--text-light);
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 400px));
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  @media (max-width: 1200px) {
+    .services-grid {
+      grid-template-columns: repeat(2, minmax(280px, 400px));
+    }
+  }
+
+  .cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-button {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.75rem, 4vw, 2rem);
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .cta-button:hover {
+    transform: scale(1.05);
+  }
+
+  .cta-button:active {
+    transform: scale(0.97);
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: minmax(280px, 90%);
+    }
+  }
+</style>
+
