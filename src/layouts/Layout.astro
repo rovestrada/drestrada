@@ -21,26 +21,44 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
     <!-- SEO -->
-    <meta name="description" content="Dr. Roberto Estrada - Ginecólogo y Obstetra en Ciudad Guzmán, Jalisco. Más de 20 años de experiencia. Agenda tu cita." />
+    <meta
+      name="description"
+      content="Dr. Roberto Estrada - Ginecólogo y Obstetra en Ciudad Guzmán, Jalisco. Más de 20 años de experiencia. Agenda tu cita."
+    />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://drestradadelafuente.com/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Dr. Roberto Estrada - Ginecología y Obstetricia" />
-    <meta property="og:description" content="Ginecólogo y Obstetra en Ciudad Guzmán, Jalisco. Atención de calidad respaldada por más de 20 años de trayectoria." />
+    <meta
+      property="og:title"
+      content="Dr. Roberto Estrada - Ginecología y Obstetricia"
+    />
+    <meta
+      property="og:description"
+      content="Ginecólogo y Obstetra en Ciudad Guzmán, Jalisco. Atención de calidad respaldada por más de 20 años de trayectoria."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://drestradadelafuente.com/" />
-    <meta property="og:image" content="https://drestradadelafuente.com/og-image.webp" />
+    <meta
+      property="og:image"
+      content="https://drestradadelafuente.com/og-image.webp"
+    />
     <meta property="og:locale" content="es_MX" />
 
     <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="uO977KfzMZpXrGZW3VotmMwPO8CtwBujG-MSlUdLDZE" />
+    <meta
+      name="google-site-verification"
+      content="uO977KfzMZpXrGZW3VotmMwPO8CtwBujG-MSlUdLDZE"
+    />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -61,6 +79,20 @@ const { title } = Astro.props;
       }
     </script>
   </head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-34C76N5SXW"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-34C76N5SXW");
+  </script>
+
   <body>
     <Navbar />
     <main>
